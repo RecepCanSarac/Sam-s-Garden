@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    //public SOPlayer playerData;
+    public SOPlayer playerData;
 
     private Rigidbody2D rb;
     private Animator _animator;
     Vector2 movement;
-    float _speed = 5;
+    float _speed;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        //_speed = playerData.Speed;
+        _speed = playerData.Speed;
         _animator = GetComponent<Animator>();
     }
     private void Update()
