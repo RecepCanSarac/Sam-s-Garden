@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public GameObject bullet;
+
     public SOPlayer player;
     public LayerMask mask;
     private float nextFireTime;
 
     public float bulletSpeed = 5f;
+
+    public BulletObjPool pool;
     private void Update()
     {
         if (Time.time >= nextFireTime)
@@ -37,11 +39,19 @@ public class PlayerAttack : MonoBehaviour
     }
     private void FireAtTarget(Collider2D target)
     {
+        GameObject bulletIns = pool.GetBulletFromPool();
 
-        GameObject bulletIns = Instantiate(bullet, transform.position, Quaternion.identity);
-        Vector2 direction = (target.transform.position - bulletIns.transform.position).normalized;
-        bulletIns.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
-        Debug.Log("Ate� ediliyor: " + target.name);
+        if (bulletIns != null)
+        {
+            bulletIns.transform.position = transform.position;
+            bulletIns.SetActive(true);
+            Vector2 direction = (target.transform.position - bulletIns.transform.position).normalized;
+            bulletIns.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
+
+            Debug.Log("Ate� ediliyor: " + target.name);
+            StartCoroutine(pool.DisableBulletAfterDelay(bulletIns, 5f));
+        }
+
     }
 
     private void OnDrawGizmosSelected()

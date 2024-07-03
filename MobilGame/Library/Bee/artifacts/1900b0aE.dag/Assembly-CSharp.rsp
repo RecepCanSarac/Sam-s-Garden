@@ -368,6 +368,7 @@
 "Assets/Scripts/Enemies/EnemyManager.cs"
 "Assets/Scripts/Experiance/Experiance.cs"
 "Assets/Scripts/Experiance/ExperianceBar.cs"
+"Assets/Scripts/ObjectPool/BulletPool/BulletObjPool.cs"
 "Assets/Scripts/Player/PlayerAttack.cs"
 "Assets/Scripts/Player/PlayerController.cs"
 "Assets/Scripts/Player/PlayerManager.cs"
