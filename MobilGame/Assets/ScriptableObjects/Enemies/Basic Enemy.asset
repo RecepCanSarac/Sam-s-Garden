@@ -16,3 +16,4 @@ MonoBehaviour:
   damage: 30
   speed: 3
   XP: 20
+  enemyPregab: {fileID: 8468714083347492672, guid: e3a87e21b4a367e4fa9dae5c30dd7230, type: 3}

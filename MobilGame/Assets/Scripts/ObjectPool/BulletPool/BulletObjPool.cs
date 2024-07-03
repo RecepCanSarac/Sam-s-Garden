@@ -7,14 +7,13 @@ public class BulletObjPool : MonoBehaviour
     public const int bulletPoolObject_SIZE = 40;
 
     public GameObject bulletPrefab;
-    public Transform bulletParent;
     private Queue<GameObject> bulletPool;
     void Start()
     {
         bulletPool = new Queue<GameObject>();
         for (int i = 0; i < bulletPoolObject_SIZE; i++)
         {
-            GameObject bullet = Instantiate(bulletPrefab, bulletParent);
+            GameObject bullet = Instantiate(bulletPrefab, transform);
             bullet.SetActive(false);
             bulletPool.Enqueue(bullet);
         }
