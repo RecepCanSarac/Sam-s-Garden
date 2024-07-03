@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BulletObjPool : MonoBehaviour
 {
-    public const int bulletPoolObject_SIZE = 50;
+    public const int bulletPoolObject_SIZE = 40;
 
     public GameObject bulletPrefab;
     public Transform bulletParent;
@@ -36,8 +36,6 @@ public class BulletObjPool : MonoBehaviour
         bullet.SetActive(false);
         bulletPool.Enqueue(bullet);
     }
-
-
 
     public IEnumerator DisableBulletAfterDelay(GameObject bullet, float delay)
     {

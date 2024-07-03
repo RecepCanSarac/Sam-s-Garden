@@ -27,7 +27,7 @@ public class PlayerManager : MonoBehaviour
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
-
+        Debug.Log("Hasar Alýyorsun");
         if (currentHealth < 0)
         {
             Debug.Log("Oyunu Kaybettin!");
@@ -44,7 +44,7 @@ public class PlayerManager : MonoBehaviour
         {
             LevelUp();
         }
-        exp.UpdateSlider();
+        //exp.UpdateSlider();
     }
     void LevelUp()
     {

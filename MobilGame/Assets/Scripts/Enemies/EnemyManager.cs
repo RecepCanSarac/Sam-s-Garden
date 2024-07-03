@@ -11,20 +11,28 @@ public class EnemyManager : MonoBehaviour
     private float fireRate = 1.0f;
     private float nextTimeFireRate = 0.0f;
 
-    public GameObject Item;
 
+    private ItemObjPool pool;
     private void Start()
     {
+        pool = GameObject.Find("ItemPool").GetComponent<ItemObjPool>();
         curretHealth = enemy.health;
     }
     public void TakeDamager(float damage)
     {
         curretHealth -= damage;
 
+
         if (curretHealth <= 0)
         {
-            GameObject item = Instantiate(Item, transform.position, Quaternion.identity);
-            item.GetComponent<Experiance>().exp = enemy.XP;
+            GameObject Item = pool.GetpoolFromItem();
+
+            if (Item != null)
+            {
+                Item.GetComponent<Experiance>().exp = enemy.XP;
+                Item.transform.position = transform.position;
+                Item.SetActive(true);
+            }
             Destroy(this.gameObject);
         }
     }
@@ -40,6 +48,4 @@ public class EnemyManager : MonoBehaviour
             }
         }
     }
-
-
 }

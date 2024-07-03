@@ -11,8 +11,12 @@ public class Experiance : MonoBehaviour
     [Header("Attributes")]
     public float radius;
     public LayerMask mask;
-
+    private ItemObjPool pool;
     public float exp;
+    private void Start()
+    {
+        pool = GameObject.Find("ItemPool").GetComponent<ItemObjPool>();
+    }
     private void Update()
     {
         Collider2D hit = Physics2D.OverlapCircle(transform.position, radius, mask);
@@ -29,8 +33,9 @@ public class Experiance : MonoBehaviour
         {
             if (experiance != null)
             {
+                Debug.Log("Þuanda XP ALDIM");
                 experiance?.Invoke(exp);
-                Destroy(this.gameObject);
+                pool.ReturnItemPool(this.gameObject);
             }
         }
     }
