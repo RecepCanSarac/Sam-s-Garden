@@ -1,7 +1,4 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyObjPool : MonoBehaviour
@@ -11,6 +8,7 @@ public class EnemyObjPool : MonoBehaviour
     public int EnemyPool_Size;
     public Queue<GameObject> enemyPool;
 
+    public MyEnum Type;
     private void Start()
     {
         enemyPool = new Queue<GameObject>();
@@ -21,7 +19,6 @@ public class EnemyObjPool : MonoBehaviour
             enemy.gameObject.SetActive(false);
             enemyPool.Enqueue(enemy);
         }
-
     }
 
     public GameObject GetFromEnemyObjPool()
@@ -38,6 +35,8 @@ public class EnemyObjPool : MonoBehaviour
     public void ReturnPoolEnemy(GameObject enemy)
     {
         enemyPool.Enqueue(enemy);
+        float health = enemy.GetComponent<EnemyManager>().enemy.MaxHealth;
+        enemy.GetComponent<EnemyManager>().curretHealth = health;
         enemy.SetActive(false);
     }
 }

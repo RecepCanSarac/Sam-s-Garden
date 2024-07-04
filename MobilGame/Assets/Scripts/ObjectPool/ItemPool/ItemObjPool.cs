@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ItemObjPool : MonoBehaviour
 {
-    private const int itemPool_SIZE = 80;
+    private const int itemPool_SIZE = 60;
     public GameObject ItemPrefab;
     public Queue<GameObject> itemPool;
     void Start()

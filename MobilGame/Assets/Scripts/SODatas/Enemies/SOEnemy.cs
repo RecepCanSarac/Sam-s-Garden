@@ -3,13 +3,14 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Enemy", menuName = "Enemy/Enemy")]
 public class SOEnemy : ScriptableObject
 {
-    [Header("Enemy Attributes")]
-    public float health;
-    public float damage;
-    public float speed;
-    public float XP;
-    [Header("Prefab")]
-    public GameObject enemyPregab;
+    [field: SerializeField] public float MaxHealth { get; private set; }
+    [field: SerializeField] public float damage { get; private set; }
+    [field: SerializeField] public float speed { get; private set; }
+    [field: SerializeField] public float XP { get; private set; }
+
+    [field: SerializeField] public GameObject enemyPregab;
+
+
     public void TargetFallow(Transform thisTransform, Transform target)
     {
         Vector3 direction = thisTransform.position - target.position;

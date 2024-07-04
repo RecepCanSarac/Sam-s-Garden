@@ -48,7 +48,6 @@ public class PlayerAttack : MonoBehaviour
             Vector2 direction = (target.transform.position - bulletIns.transform.position).normalized;
             bulletIns.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
 
-            Debug.Log("Ate� ediliyor: " + target.name);
             StartCoroutine(pool.DisableBulletAfterDelay(bulletIns, 5f));
         }
 

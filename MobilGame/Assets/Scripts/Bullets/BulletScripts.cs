@@ -17,7 +17,6 @@ public class BulletScripts : MonoBehaviour
         {
             EnemyManager enemy = collision.gameObject.GetComponent<EnemyManager>();
             enemy.TakeDamager(bullet.Damage);
-            Debug.Log("asd");
             pool.ReturnBulletPool(this.gameObject);
         }
     }

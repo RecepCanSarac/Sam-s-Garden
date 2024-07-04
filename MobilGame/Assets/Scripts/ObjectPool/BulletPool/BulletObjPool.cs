@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BulletObjPool : MonoBehaviour
 {
-    public const int bulletPoolObject_SIZE = 40;
+    public const int bulletPoolObject_SIZE = 30;
 
     public GameObject bulletPrefab;
     private Queue<GameObject> bulletPool;
@@ -18,7 +18,6 @@ public class BulletObjPool : MonoBehaviour
             bulletPool.Enqueue(bullet);
         }
     }
-
     public GameObject GetBulletFromPool()
     {
         if (bulletPool.Count > 0)

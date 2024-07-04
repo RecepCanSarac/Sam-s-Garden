@@ -33,7 +33,6 @@ public class Experiance : MonoBehaviour
         {
             if (experiance != null)
             {
-                Debug.Log("Þuanda XP ALDIM");
                 experiance?.Invoke(exp);
                 pool.ReturnItemPool(this.gameObject);
             }

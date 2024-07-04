@@ -9,18 +9,18 @@ public class EnemyController : MonoBehaviour
 
     private Rigidbody2D rb;
     private bool isChasing = true;
-    private float speed;
+    float distanceToPlayer;
     private void Start()
     {
-        speed = enemy.speed;
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
-
+    private void Update()
+    {
+        distanceToPlayer = Vector2.Distance(transform.position, player.position);
+    }
     private void FixedUpdate()
     {
-        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
-
         if (isChasing)
         {
             if (distanceToPlayer > stopDistance)
@@ -43,8 +43,8 @@ public class EnemyController : MonoBehaviour
 
     private void ChasePlayer()
     {
-        Vector2 direction = (player.position - transform.position).normalized;
-        rb.MovePosition((Vector2)transform.position + (direction * speed * Time.fixedDeltaTime));
+        Vector2 direction = (player.position - transform.position).normalized.normalized;
+        rb.MovePosition((Vector2)transform.position + (direction * enemy.speed * Time.fixedDeltaTime));
     }
 
     private void StopChasing()

@@ -51,6 +51,6 @@ public class PlayerManager : MonoBehaviour
         currentXP -= xpToNextLevel;
         currentLevel++;
         xpToNextLevel = Mathf.RoundToInt(xpToNextLevel * 1.1f);
-        exp.levelSlider.maxValue = xpToNextLevel;
+        //exp.levelSlider.maxValue = xpToNextLevel;
     }
 }

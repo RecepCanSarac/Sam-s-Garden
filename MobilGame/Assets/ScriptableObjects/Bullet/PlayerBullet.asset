@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54e781b7ce6f1114fa864a13a6916769, type: 3}
   m_Name: PlayerBullet
   m_EditorClassIdentifier: 
-  Damage: 5
+  Damage: 20
