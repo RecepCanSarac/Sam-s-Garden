@@ -369,6 +369,7 @@
 "Assets/Scripts/Enemies/EnemyManager.cs"
 "Assets/Scripts/Experiance/Experiance.cs"
 "Assets/Scripts/Experiance/ExperianceBar.cs"
+"Assets/Scripts/Manager/AugmentManager.cs"
 "Assets/Scripts/Manager/GameManager.cs"
 "Assets/Scripts/Manager/SpawnManager.cs"
 "Assets/Scripts/ObjectPool/BulletPool/BulletObjPool.cs"
@@ -377,9 +378,12 @@
 "Assets/Scripts/Player/PlayerAttack.cs"
 "Assets/Scripts/Player/PlayerController.cs"
 "Assets/Scripts/Player/PlayerManager.cs"
+"Assets/Scripts/SODatas/Augment/SOAugment.cs"
+"Assets/Scripts/SODatas/Augment/SODamageUp.cs"
 "Assets/Scripts/SODatas/Bullet/SOBullet.cs"
 "Assets/Scripts/SODatas/Enemies/SOEnemy.cs"
 "Assets/Scripts/SODatas/Player/SOPlayer.cs"
+"Assets/Scripts/UI/AugmentUI.cs"
 -langversion:9.0
 
 /deterministic
